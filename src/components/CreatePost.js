@@ -1,6 +1,6 @@
 import {db} from "../firebase";
 import { useFormInput } from "../hooks";
-import "./Button.css";
+import classes from "./Button.module.css";
 function CreatePost(){
     const title=useFormInput();
     const subTitle=useFormInput();
@@ -42,7 +42,7 @@ function CreatePost(){
                 </div>
 
                 {/* <button className="create-post-btn">Create Post</button> */}
-                <button>Create Post</button>
+                <button className={classes.buttonofthePostCreate}>Create Post</button>
             </form>
             
         </div>
