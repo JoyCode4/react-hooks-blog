@@ -30,8 +30,8 @@ function Home(){
     },[]);
     return (
         <div className="home">
-            <h1>Tech Blog</h1>
-            <div id="blog-by">Jayesh</div>
+            <h1 style={styles.heading}>Tech Blog</h1>
+            <div style={styles.div} id="blog-by">Jayesh</div>
             {posts.map((post,index)=>(
                 <div className="post" key={`post-${index}`}>
                     <Link to={`/post/${post.id}`}>
@@ -45,3 +45,12 @@ function Home(){
 }
 
 export default Home;
+const styles = {
+    heading:{
+        marginTop:30,
+        fontSize:50
+    },
+    div:{
+        fontWeight:"bold",
+    }
+}
