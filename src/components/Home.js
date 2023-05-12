@@ -5,7 +5,18 @@ import { Link } from "react-router-dom";
 function Home(){
     const [posts,setPosts] = useState([]);
     useEffect(()=>{
-        db.collection("posts").get().then((snapshot)=>{
+        // db.collection("posts").get().then((snapshot)=>{
+        //     const posts = snapshot.docs.map((doc)=>{
+        //         return {
+        //             id:doc.id,
+        //             ...doc.data()
+        //         }
+        //     })
+
+        //     // console.log(posts);
+        //     setPosts(posts);
+        // })
+        db.collection("posts").onSnapshot((snapshot)=>{
             const posts = snapshot.docs.map((doc)=>{
                 return {
                     id:doc.id,

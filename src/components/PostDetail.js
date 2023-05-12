@@ -7,6 +7,7 @@ function PostDetail(){
     const postId= useParams().postId;
     useEffect(()=>{
         db.collection("posts").doc(postId).get().then((snapshot)=>{
+
             // console.log("snapshot",snapshot.data());
             setPost(snapshot.data());
         })
