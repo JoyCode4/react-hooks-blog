@@ -1,0 +1,10 @@
+button{
+    font-size: larger;
+    font-family: serif;
+    color: rgb(27, 24, 24);
+    padding: 10px;
+    background-color: #e77a7a;
+    border-radius: 5px;
+    border: none;
+
+}

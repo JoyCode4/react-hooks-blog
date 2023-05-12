@@ -1,6 +1,6 @@
 import {db} from "../firebase";
 import { useFormInput } from "../hooks";
-
+import "./Button.css";
 function CreatePost(){
     const title=useFormInput();
     const subTitle=useFormInput();
@@ -41,7 +41,8 @@ function CreatePost(){
                     <textarea {...content}></textarea>
                 </div>
 
-                <button className="create-post-btn">Create Post</button>
+                {/* <button className="create-post-btn">Create Post</button> */}
+                <button>Create Post</button>
             </form>
             
         </div>
