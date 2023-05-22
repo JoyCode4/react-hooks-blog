@@ -1,6 +1,23 @@
 import {db} from "../firebase";
 import { useFormInput } from "../hooks";
-import classes from "./Button.module.css";
+// import classes from "./Button.module.css";
+import styled,{css} from "styled-components";
+
+const StyledButton = styled.button`
+    font-size: larger;
+    font-family: serif;
+    color: rgb(27, 24, 24);
+    padding: 10px;
+    background-color: ${(props)=> (props.primary ? "cyan" : "#9c9c9c")};
+    border-radius: 5px;
+    border: none;
+    cursor : pointer;
+    ${(props)=>(props.primary && css`
+        border:1px solid black;
+        background-color:${props.bgColor}
+    `)}
+`
+
 function CreatePost(){
     const title=useFormInput();
     const subTitle=useFormInput();
@@ -42,7 +59,11 @@ function CreatePost(){
                 </div>
 
                 {/* <button className="create-post-btn">Create Post</button> */}
-                <button className={classes.buttonofthePostCreate}>Create Post</button>
+                {/* <button className={classes.buttonofthePostCreate}>Create Post</button> */}
+
+                {/* <StyledButton>Create Post</StyledButton> */}
+                <StyledButton primary bgColor="green">Create Post</StyledButton>
+
             </form>
             
         </div>
